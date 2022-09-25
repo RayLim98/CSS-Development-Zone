@@ -1,23 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import SelectField from './components/text-input/SelectField';
+import { useState } from 'react';
+import GradiantWrapper from './components/wrapper/gradiantWrapper';
+import InputField from './components/text-input/InputSelect';
+import CircleLoader from './components/wrapper/CircleLoader';
+import MultiColorLoader from './components/wrapper/MultiColorLoader';
+
+const options = [ 
+  {
+    label: 'Name',
+    value: 'raymond'
+  },
+  {
+    label: 'Name',
+    value: 'Jono'
+  }
+ 
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SelectField 
+        options={options} 
+      />
+      <InputField
+        placeholder={'Input field'}
+        label={'label'}
+      />
+      <GradiantWrapper/>
+      <CircleLoader/>
+      <MultiColorLoader/> 
     </div>
   );
 }
