@@ -23,23 +23,23 @@ const StyledSector = styled.div`
   mix-blend-mode: overlay;
 `
 
-const MultiColorLoader = () => {
+const MultiColorLoader = ({speed = 1}) => {
   return (
     <Wrapper>
       <StyledSector 
         borderColor={'lightcoral'} 
         timingType={'linear'}
-        duration={'1500ms'}
+        duration={`${1500 / speed}ms`}
       />
       <StyledSector 
         borderColor={'lightblue'} 
         timingType={'ease-in-out'}
-        duration={'3000ms'}
+        duration={`${3000 / speed}ms`}
       />
       <StyledSector 
         borderColor={'lightgreen'} 
         timingType={'ease-out'}
-        duration={'3000ms'}
+        duration={`${3000 / speed}ms`}
       />
     </Wrapper>
   )

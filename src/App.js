@@ -1,10 +1,10 @@
 import './App.css';
 import SelectField from './components/text-input/SelectField';
-import GradiantWrapper from './components/wrapper/gradiantWrapper';
 import InputField from './components/text-input/InputSelect';
-import CircleLoader from './components/wrapper/CircleLoader';
-import MultiColorLoader from './components/wrapper/MultiColorLoader';
-import Menu from './components/menu/menu';
+import CircleLoader from './components/loader/CircleLoader';
+import MultiColorLoader from './components/loader/MultiColorLoader';
+import BubbleMenu from './components/menu/bubble-menu';
+import GradiantWrapper from './components/loader/gradiantWrapper';
 
 const options = [ 
   {
@@ -28,10 +28,10 @@ function App() {
         placeholder={'Input field'}
         label={'label'}
       />
-      <GradiantWrapper/>
+      <GradiantWrapper isLoading={true}/>
       <CircleLoader/>
       <MultiColorLoader/> 
-      <Menu/>
+      <BubbleMenu/>
     </div>
   );
 }
