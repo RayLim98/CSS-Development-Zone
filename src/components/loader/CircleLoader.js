@@ -22,6 +22,7 @@ const Wrapper = styled.div`
                 rgba(255,0,0,0.02),
               red);
   animation: ${rotate} 1000ms ease-in-out infinite;
+  animation-duration: ${({duration}) => duration && duration};
 `
 
 const StyledDiv = styled.div`
@@ -35,9 +36,9 @@ const StyledDiv = styled.div`
   border-radius: inherit;
 `
 
-const CircleLoader = () => {
+const CircleLoader = ({speed}) => {
   return (
-    <Wrapper>
+    <Wrapper duration={`${1000/speed}ms`}>
       <StyledDiv/>
     </Wrapper>
   )

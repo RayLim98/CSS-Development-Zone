@@ -20,5 +20,11 @@ const Template2 = (args) => (
 )
 
 export const Loader = Template1.bind({});
+Loader.args = {
+  speed: 1,
+}
 
 export const ColorLoader = Template2.bind({});
+ColorLoader.args = {
+  speed: 1,
+}
