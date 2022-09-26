@@ -23,7 +23,6 @@ const StyledSector = styled.div`
   mix-blend-mode: overlay;
 `
 
-
 const MultiColorLoader = () => {
   return (
     <Wrapper>

@@ -23,6 +23,7 @@ const Wrapper = styled.div`
               red);
   animation: ${rotate} 1000ms ease-in-out infinite;
 `
+
 const StyledDiv = styled.div`
   position: absolute;
   margin:.3rem;

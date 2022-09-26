@@ -25,7 +25,7 @@ const StyledInputField = styled.div`
 
 const Value = styled.input`
   flex-grow: 1;
-  background-color: none;
+  background-color: transparent;
   border: none;
   font-size: inherit;
   outline: none;

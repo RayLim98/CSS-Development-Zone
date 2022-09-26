@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import SelectField from './components/text-input/SelectField';
-import { useState } from 'react';
 import GradiantWrapper from './components/wrapper/gradiantWrapper';
 import InputField from './components/text-input/InputSelect';
 import CircleLoader from './components/wrapper/CircleLoader';
 import MultiColorLoader from './components/wrapper/MultiColorLoader';
+import Menu from './components/menu/menu';
 
 const options = [ 
   {
@@ -32,6 +31,7 @@ function App() {
       <GradiantWrapper/>
       <CircleLoader/>
       <MultiColorLoader/> 
+      <Menu/>
     </div>
   );
 }
