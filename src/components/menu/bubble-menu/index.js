@@ -61,7 +61,7 @@ const StyledItem = styled(StyledButton)`
   z-index: 99;
 `
 
-const BubbleMenu = () => {
+export const BubbleMenu = () => {
   const [isOpen, setIsOpen] = useState(true)
   return (
     <StyledWrapper>
@@ -102,5 +102,3 @@ const BubbleMenu = () => {
     </StyledWrapper>
   )
 }
-
-export default BubbleMenu

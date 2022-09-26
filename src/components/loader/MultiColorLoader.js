@@ -23,7 +23,7 @@ const StyledSector = styled.div`
   mix-blend-mode: overlay;
 `
 
-const MultiColorLoader = ({speed = 1}) => {
+export const MultiColorLoader = ({speed = 1}) => {
   return (
     <Wrapper>
       <StyledSector 
@@ -44,5 +44,3 @@ const MultiColorLoader = ({speed = 1}) => {
     </Wrapper>
   )
 }
-
-export default MultiColorLoader

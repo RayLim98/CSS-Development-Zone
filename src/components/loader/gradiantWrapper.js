@@ -22,12 +22,10 @@ const StyledWrapper = styled(AnimatedGradient)`
   width: 100px;
 `
 
-const GradiantWrapper = ({children, isLoading}) => {
+export const GradiantWrapper = ({children, isLoading}) => {
   return (
     <StyledWrapper isLoading={isLoading}>
       {children}
     </StyledWrapper>
   )
 }
-
-export default GradiantWrapper

@@ -36,12 +36,10 @@ const StyledDiv = styled.div`
   border-radius: inherit;
 `
 
-const CircleLoader = ({speed}) => {
+export const CircleLoader = ({speed}) => {
   return (
     <Wrapper duration={`${1000/speed}ms`}>
       <StyledDiv/>
     </Wrapper>
   )
 }
-
-export default CircleLoader
