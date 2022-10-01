@@ -17,13 +17,18 @@ const StyledDiv = styled.div`
   }
   outline: none;
 `
+const Content = styled.div`
+  flex-grow: 1;
+  flex-wrap: wrap;
+`
 
 const Value = styled.span`
   flex-grow: 1;
   background-color: none;
-  border: none;
   font-size: inherit;
 `
+
+
 const StyledButton = styled.button`
   border: none;
   background-color: transparent;
@@ -60,36 +65,62 @@ const StyledItem = styled.li`
 `
 
 // const SelectField = ({options, onChange, value}) => {
-const SelectField = ({options, label}) => {
-  const [value, setValue] = useState("");
+const MultiSelect = ({options, label}) => {
+  const [value, setValue] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false)
 
-  const onChange = (item) => {
-    setValue(item)
+  const onSelect = item => {
+    if(!value.includes(item)) setValue(prev => [...prev, item])
   }
+
+  const onDelete = item => {
+    setValue(prev => prev.filter(currentValue => currentValue !== item))
+  }
+
+  const onDeleteAll = () => setValue([])
+
   return (
     <StyledDiv 
       tabIndex={0} 
       onClick={()=> setIsOpen(prev=> !prev)} 
       onBlur={()=> setIsOpen(false)}
     >
-      <Value>{value && value.value}</Value>
-      {
-        value &&
-        <Clear onClick={e=> {
-          e.stopPropagation()
-          onChange(undefined)
-        }}>
-          &times;
-        </Clear>
-      }
+      {label}
+      <Content>
+        {
+          value && value.map((item)=> 
+            <>
+              <Value>{item.value}</Value>
+              <Clear
+                onClick={e=> {
+                  e.stopPropagation()
+                  onDelete(item)
+                }}
+              >
+                &times;
+              </Clear>
+            </>
+          )
+        }
+      </Content>
+      <Clear onClick={e=> {
+        e.stopPropagation()
+        onDeleteAll()
+      }}>
+        &times;
+      </Clear>
       <List isOpen={isOpen}>
         {
-          options.map(item => 
-            <StyledItem onClick={()=> onChange(item)}>
-              {item.value}
-            </StyledItem>
+          options.map(item => {
+            if(!value.includes(item)) {
+              return (
+                  <StyledItem onClick={()=> onSelect(item)}>
+                    {item.value}
+                  </StyledItem>
+                )
+              }
+            }
           )
         }
       </List>
@@ -97,4 +128,4 @@ const SelectField = ({options, label}) => {
   )
 }
 
-export default SelectField
+export default MultiSelect

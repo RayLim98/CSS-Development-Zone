@@ -5,7 +5,6 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
-
 const StyledInputField = styled.div`
   display: flex;
   position: relative;
