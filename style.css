@@ -3,6 +3,8 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: unset;
   padding: unset;
+  list-style: none;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -24,3 +26,33 @@ h6 {
   font-size: 1rem;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg , #F87607, #ffd500);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  cursor: pointer;
+  color: #012DFE;
+  transition: all ease-in 100ms;
+}
+
+.title2 {
+  color: #a200ff;
+}
+
+.title:hover {
+  color: beige;
+  transform: scale(1.1)
+}
