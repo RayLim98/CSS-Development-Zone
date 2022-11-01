@@ -1,10 +1,11 @@
 import './App.css';
 import SelectField from './components/text-input/SelectField';
 import InputField from './components/text-input/InputSelect';
-import CircleLoader from './components/loader/CircleLoader';
-import MultiColorLoader from './components/loader/MultiColorLoader';
-import BubbleMenu from './components/menu/bubble-menu';
-import GradiantWrapper from './components/loader/gradiantWrapper';
+import { CircleLoader } from './components/loader/CircleLoader';
+import { MultiColorLoader } from './components/loader/MultiColorLoader';
+import { BubbleMenu } from './components/menu/bubble-menu';
+import { GradiantWrapper } from './components/loader/gradiantWrapper';
+import ToggleButton from './components/buttons/ToggleButton';
 
 const options = [ 
   {
@@ -21,7 +22,7 @@ const options = [
 function App() {
   return (
     <div className="App">
-      <SelectField 
+      {/* <SelectField 
         options={options} 
       />
       <InputField
@@ -31,7 +32,8 @@ function App() {
       <GradiantWrapper isLoading={true}/>
       <CircleLoader/>
       <MultiColorLoader/> 
-      <BubbleMenu/>
+      <BubbleMenu/> */}
+      <ToggleButton> toggle </ToggleButton>
     </div>
   );
 }
