@@ -43,13 +43,14 @@ const StyledButton = styled.button`
 
 const Active = styled.div `
     position: absolute;
-    height: 110%;
-    width: 110%;
+    height: ${({size}) => size && `${size}%`};
+    width: ${({size}) => size && `${size}%`};
     border-radius: 50%;
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     border-top-color: #d6ad60;
     transition: all 200ms cubic-bezier(0.000, 1.650, 0.175, 0.975); /* custom */
     animation: ${rotate} 4000ms linear infinite;
+    animation-duration: ${({duration})=> duration && `${duration}ms`};
 `
 
 const ToggleButton = ({children}) => {
@@ -61,8 +62,12 @@ const ToggleButton = ({children}) => {
 
     return (
         <Wrapper>
-            {
-                active && <Active scale={1.1}/>
+            { 
+                active && 
+                    <>
+                        <Active size = {110}/> 
+                        <Active size = {130} duration = {8000}/> 
+                    </> 
             }
             <StyledButton 
                 onMouseEnter={onEnter}

@@ -6,6 +6,8 @@ import { MultiColorLoader } from './components/loader/MultiColorLoader';
 import { BubbleMenu } from './components/menu/bubble-menu';
 import { GradiantWrapper } from './components/loader/gradiantWrapper';
 import ToggleButton from './components/buttons/ToggleButton';
+import HoveredBg from './components/wrapper/HoveredBg';
+import HoverButton from './components/buttons/HoverButton';
 
 const options = [ 
   {
@@ -32,8 +34,8 @@ function App() {
       <GradiantWrapper isLoading={true}/>
       <CircleLoader/>
       <MultiColorLoader/> 
-      <BubbleMenu/> */}
-      <ToggleButton> toggle </ToggleButton>
+      <BubbleMenu/>
+      <ToggleButton> toggle </ToggleButton> */}
     </div>
   );
 }
